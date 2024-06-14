@@ -1,0 +1,364 @@
+.checkout-page {
+    width: 100%;
+    position: relative;
+}
+
+.checkout-page h5.active {
+    color: var(--theme-color);
+}
+
+.checkout-page h5 {
+    font-weight: 700;
+    color: #555555;
+}
+
+.checkout-page h6 {
+    font-weight: 700;
+}
+
+.adress-box {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #a8a8a8;
+    border-radius: 10px;
+}
+
+.adress-box .adress {
+    width: 100%;
+    height: auto;
+}
+
+.adress-box .each-address {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adress-box .each-address label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.adress-box .each-address label span.name {
+    font-weight: 700;
+}
+
+.adress-box .each-address input:checked~label {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #f1edff;
+    border: 1px solid #b8a5ff;
+    border-radius: 5px;
+}
+
+.adress-box .empty-address {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f1edff;
+    border: 1px solid #b8a5ff;
+}
+
+.adress-box .add-adress {
+    display: flex;
+    align-items: center;
+}
+
+.adress-box .add-adress span:nth-child(1) {
+    color: #bdbdbd;
+    font-size: 25px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.adress-box .add-adress span:nth-child(2) {
+    color: var(--theme-color);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.order-box {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #a8a8a8;
+    border-radius: 10px;
+}
+
+.order-box .info {
+    font-size: 14px;
+}
+
+.order-box .proceed-btn {
+    width: 100%;
+    height: 38px;
+    background-color: var(--theme-color);
+    color: #fff;
+    border-radius: 5px;
+    border: 0;
+}
+
+.order-box .proceed-btn.disable {
+    background-color: gray;
+}
+
+.order-box p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-box h5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--theme-color);
+    font-weight: 500;
+}
+
+/***payment screen*****/
+.checkout-page .delivery-address {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.checkout-page .delivery-address span {
+    color: var(--theme-color);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.checkout-page .delivery-address .address-info p {
+    font-size: 16px;
+}
+
+.checkout-page .payment-box {
+    width: 100%;
+    height: auto;
+    border: 1px solid #a8a8a8;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.checkout-page .payment-box .input-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.checkout-page .payment-box .input-field .heading {
+    font-weight: 600;
+}
+
+.checkout-page .payment-box .input-field label .enter-card {
+    color: var(--theme-color);
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+    cursor: pointer;
+    display: none;
+}
+
+.checkout-page .payment-box .input-field label {
+    width: 100%;
+}
+
+.checkout-page .payment-box .input-field label select {
+    border: 1px solid #a8a8a8;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+}
+
+.checkout-page .payment-box .input-field label .upi-option {
+    display: none;
+}
+
+.checkout-page .payment-box .input-field .upi-option .upi-input input {
+    height: 38px;
+    padding: 10px;
+    border: 1px solid #a8a8a8;
+    border-radius: 5px;
+    outline: 0;
+}
+
+.checkout-page .payment-box .input-field .upi-option .upi-input button {
+    border: 1px solid #a8a8a8;
+    background-color: #fff;
+    margin-left: 20px;
+}
+
+/***checked css***/
+.checkout-page .payment-box .input-field input:checked~label {
+    background-color: #f1edff;
+    border: 1px solid #b8a5ff;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.checkout-page .payment-box .input-field #pay-1:checked~label .enter-card {
+    display: block;
+}
+
+.checkout-page .payment-box .input-field #pay-3:checked~label .upi-option {
+    display: block;
+}
+
+.checkout-page .payment-box .input-field #pay-2:checked~label select {
+    display: block;
+}
+
+/****Card payment modal css***/
+.modal-header {
+    background-color: #f1edff !important;
+    border-bottom: 1px solid #b8a5ff !important;
+}
+
+.modal-footer {
+    background-color: #f1edff !important;
+    border: 1px solid #b8a5ff !important;
+}
+
+.modal-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+.cardpay-modal .modal-body {
+    padding: 35px !important;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.modal-footer .enter-btn {
+    background-color: var(--theme-color);
+    color: #fff;
+}
+
+.modal-footer .cancel-btn {
+    border: 1px solid #a8a8a8;
+}
+
+.cardpay-modal .modal-body .card-input {
+    width: 60%;
+}
+
+.cardpay-modal .modal-body .card-info {
+    width: 40%;
+}
+
+.cardpay-modal .modal-body .card-input .input-field {
+    display: flex;
+    gap: 10px;
+}
+
+.cardpay-modal .modal-body .card-input .input-field label {
+    width: 100px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cardpay-modal .modal-body .card-input .input-field input {
+    width: 200px;
+    height: 35px;
+    border: 1px solid #a8a8a8;
+    border-radius: 5px;
+    outline: 0;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.cardpay-modal .modal-body .card-input .input-field select {
+    width: 95px !important;
+    border: 1px solid #a8a8a8;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.cardpay-modal .modal-body .card-info p {
+    font-size: 14px;
+}
+
+@media (max-width: 991px) {
+    .cardpay-modal .modal-body {
+        justify-content: center;
+    }
+
+    .cardpay-modal .modal-body .card-input .input-field label {
+        width: auto;
+    }
+
+    .cardpay-modal .modal-body .card-input .input-field input {
+        width: 100%;
+    }
+
+    .cardpay-modal .modal-body .card-info {
+        display: none;
+    }
+}
+
+
+/*****adress form modal css*****/
+
+.adressform-modal .modal-body form h5 {
+    font-weight: 600;
+    color: #2e2e2e;
+}
+
+.adressform-modal .modal-body form .input-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    margin-bottom: 15px;
+}
+
+.adressform-modal .modal-body form .input-field label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.adressform-modal .modal-body form .input-field input {
+    width: 100%;
+    height: 38px;
+    outline: 0;
+    border: 1px solid #a8a8a8;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.adressform-modal .modal-body form .input-field select {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #a8a8a8;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.adressform-modal .modal-body form .select-field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adressform-modal .modal-body form .button-field {
+    display: flex;
+    justify-content: center;
+}
+
+.adressform-modal .modal-body form .button-field button {
+    background-color: var(--theme-color);
+    color: #fff;
+}

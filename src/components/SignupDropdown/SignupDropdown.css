@@ -1,0 +1,36 @@
+.signup-dropdown{
+    width: 250px;
+    height: 400px;
+    position: absolute;
+    z-index: 99;
+    background-color: #fff;
+    top: 80px;
+    padding: 15px 0;
+}
+.signup-dropdown ul{
+    flex-direction: column;
+    color: var(--light-dark-text) !important;
+    align-items: flex-start !important;
+}
+.signup-dropdown ul a{
+    text-decoration: none;
+    color: var(--light-dark-text);
+}
+.signup-dropdown ul li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+.signup-dropdown ul li svg{
+    font-size: 22px;
+}
+.signup-dropdown ul li.login-btn{
+    background-color: var(--theme-color);
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 50px;
+}
+.signup-dropdown ul li:hover svg{
+    color: var(--theme-color);
+}

@@ -1,0 +1,25 @@
+footer{
+    background-color: var(--black1);
+    padding: 50px 0;
+}
+footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+footer a{
+    text-decoration: none;
+    color: #8f8f8f;
+    font-size: 14px;
+}
+footer p{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--light-text-color);
+}
+footer span{
+    color: #8f8f8f;
+    margin: 0 10px;
+}

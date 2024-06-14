@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+  --black1 : #212121;
+  --theme-color: #7451f8;
+  --dark-shade: #4A4A4A;
+  --background: #ECECEC;
+  --light-text-color: #fff;
+  --dark-text-color: #000;
+  --light-dark-text: #575757;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'roboto', Arial, Helvetica, sans-serif;
+}
+
+/**Card hover effect**/
+.upDownEffect{
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.upDownEffect:hover{
+  transform: translateY(-10px);
+}
+
+.continue-shopping-btn{
+  padding: 10px 30px;
+  background-color: var(--theme-color);
+  border: 0;
+  outline: 0;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.modal-footer .ok-btn{
+  background-color: var(--theme-color);
+  color: var(--light-text-color);
+}

@@ -1,0 +1,9 @@
+.favorite-page{
+    min-height: 100vh;
+}
+.empty-bag{
+    height: 70vh;
+}
+.empty-bag img{
+    width: 300px;
+}
