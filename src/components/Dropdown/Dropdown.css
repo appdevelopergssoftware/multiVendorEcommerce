@@ -22,3 +22,7 @@
 .drop-down-container ul li:hover{
     color: var(--dark-text-color);
 }
+.drop-down-container .brand-container .brand-item:hover{
+    color: var(--theme-color);
+    font-weight: 600;
+}

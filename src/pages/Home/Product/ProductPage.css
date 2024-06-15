@@ -5,11 +5,12 @@
     position: relative;
     border: 1px solid #d1d1d1;
 }
+
 /* .product-card:hover.product-card{
     border: 1px solid #a8a8a8;
 } */
 
-.product-card .heart-icon{
+.product-card .heart-icon {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -21,7 +22,8 @@
     padding: 5px;
     border-radius: 5px;
 }
-.product-card .same-product-icon{
+
+.product-card .same-product-icon {
     position: absolute;
     top: 60px;
     right: 30px;
@@ -98,7 +100,7 @@
 
 /*****For filteration****/
 .filter-container {
-    width: 80%;
+    width: 100%;
     height: auto;
     border: 1px solid #a8a8a8;
     border-radius: 5px;
@@ -138,8 +140,10 @@
     align-items: center;
     gap: 8px;
 }
-.accordion-body ul li label{
+
+.accordion-body ul li label {
     width: 100%;
+    cursor: pointer;
 }
 
 .accordion-item button {
@@ -197,7 +201,8 @@
     height: 100%;
     font-size: 14px;
 }
-.accordion-button:not(.collapsed){
+
+.accordion-button:not(.collapsed) {
     background-color: #f1edff !important;
 }
 
@@ -220,10 +225,11 @@
 
 
 /*****Product card caroussel css*****/
-.carousel{
+.carousel {
     display: flex !important;
     justify-content: flex-end !important;
 }
+
 .carousel .control-dots {
     width: 60px !important;
     background-color: #212121;
@@ -234,12 +240,14 @@
     height: 10px;
     margin: 0 !important;
 }
-.carousel .control-dots .dot{
+
+.carousel .control-dots .dot {
     width: 4px !important;
     height: 4px !important;
     margin: 0 3px !important;
 }
-.carousel.carousel-slider .control-arrow{
+
+.carousel.carousel-slider .control-arrow {
     opacity: 1 !important;
     background-color: #494949 !important;
     height: 50px !important;
@@ -249,6 +257,28 @@
     top: 50% !important;
     transform: translateY(-50%);
 }
-.carousel .control-arrow:before{
+
+.carousel .control-arrow:before {
     color: #212121 !important;
+}
+
+
+/*similar product modal */
+
+.modal-header .modal-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-body .product-card{
+    border: 0;
+}
+.modal-body .product-card .heart-icon{
+    right: 15px;
+}
+.modal-body .product-card .same-product-icon{
+    display: none;
+}
+.modal-body .product-card .product-info h5{
+    font-size: 16px;
 }

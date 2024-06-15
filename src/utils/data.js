@@ -412,23 +412,28 @@ export const productData = [
     img: [
       {
         color: "Navy",
-        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584334_437Wx649H_202212060006041.jpeg"]
+        colorIcon: "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584334_437Wx649H_202212060006041.jpeg",
+        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584334_437Wx649H_202212060006041.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584334_437Wx649H_202212060006012.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584334_437Wx649H_202212060006023.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584334_437Wx649H_202212060006054.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584334_437Wx649H_202212060005595.jpeg"]
       },
       {
         color: "Blue",
-        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584331_437Wx649H_202212060005561.jpeg"]
+        colorIcon: "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584331_437Wx649H_202212060005561.jpeg",
+        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584331_437Wx649H_202212060005561.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584331_437Wx649H_202212060006032.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584331_437Wx649H_202212060005583.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584331_437Wx649H_202212060006004.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584331_437Wx649H_202212060006015.jpeg"]
       },
       {
         color: "Green",
-        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584340_437Wx649H_202212060006371.jpeg"]
+        colorIcon: "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584340_437Wx649H_202212060006371.jpeg",
+        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584340_437Wx649H_202212060006371.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584340_437Wx649H_202212060006402.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584340_437Wx649H_202212060006363.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584340_437Wx649H_202212060006424.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584340_437Wx649H_202212060006395.jpeg"]
       },
       {
         color: "Maroon",
-        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584345_437Wx649H_202212060006541.jpeg"]
+        colorIcon: "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584345_437Wx649H_202212060006541.jpeg",
+        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584345_437Wx649H_202212060006541.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584345_437Wx649H_202212060006522.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584345_437Wx649H_202212060006583.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584345_437Wx649H_202212060006574.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584345_437Wx649H_202212060006555.jpeg"]
       },
       {
         color: "Yellow",
-        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584348_437Wx649H_202212060007211.jpeg"]
+        colorIcon: "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584348_437Wx649H_202212060007211.jpeg",
+        img: ["https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584348_437Wx649H_202212060007211.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584348_437Wx649H_202212060007232.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584348_437Wx649H_202212060007193.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584348_437Wx649H_202212060007164.jpeg", "https://img.tatacliq.com/images/i8/437Wx649H/MP000000015584348_437Wx649H_202212060007005.jpeg"]
       },
     ],
     price: 1205,
@@ -470,19 +475,24 @@ export const productData = [
     img: [
       {
         color: "Beige",
-        img: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127127_437Wx649H_202301201602011.jpeg"]
+        colorIcon: "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127127_437Wx649H_202301201602011.jpeg",
+        img: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127127_437Wx649H_202301201602011.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127127_437Wx649H_202301201601582.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127127_437Wx649H_202301201602033.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127127_437Wx649H_202301201602054.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127127_437Wx649H_202301201601595.jpeg"
+        ]
       },
       {
         color: "Dark Green",
-        img: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127126_437Wx649H_202301201601591.jpeg"]
+        colorIcon: "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127126_437Wx649H_202301201601591.jpeg",
+        img: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127126_437Wx649H_202301201601591.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127126_437Wx649H_202301201602032.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127126_437Wx649H_202301201602053.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127126_437Wx649H_202301201601584.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127126_437Wx649H_202301201602025.jpeg"]
       },
       {
         color: "Grey",
-        img: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016370204_437Wx649H_202302041631411.jpeg"]
+        colorIcon: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016370204_437Wx649H_202302041631411.jpeg"],
+        img: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016370204_437Wx649H_202302041631411.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016370204_437Wx649H_202302041631472.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016370204_437Wx649H_202302041631453.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016370204_437Wx649H_202302041631434.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016370204_437Wx649H_202302041631465.jpeg"]
       },
       {
         color: "Rust",
-        img: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127124_437Wx649H_202301201601591.jpeg"]
+        colorIcon: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127124_437Wx649H_202301201601591.jpeg"],
+        img: ["https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127124_437Wx649H_202301201601591.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127124_437Wx649H_202301201602032.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127124_437Wx649H_202301201601563.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127124_437Wx649H_202301201602024.jpeg", "https://img.tatacliq.com/images/i9/437Wx649H/MP000000016127124_437Wx649H_202301201601585.jpeg"]
       },
     ],
     price: 3999,

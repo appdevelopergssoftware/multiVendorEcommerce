@@ -9,9 +9,11 @@ import { addToCart } from '../../../store/cartSlice';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { TbCardsFilled } from "react-icons/tb";
 import { addFavProducts, removeFavProducts } from '../../../store/favPrductSlice';
 import ReactImageMagnify from 'react-image-magnify';
 import { addCheckout } from '../../../store/checkoutSlice';
+import SimilarProductModal from '../Product/SimilarProductModal';
 
 const SingleProductPage = () => {
   const { id } = useParams();
@@ -20,11 +22,17 @@ const SingleProductPage = () => {
   const singleProduct = productData.find(item => item.id == id);
   const [isAddedtoCart, setAddedtoCart] = useState(false);
 
+  // Initialize activeColor with the first color of the product
   const [activeColor, setActiveColor] = useState(singleProduct?.img[0].color);
+  // Initialize productImages with the images of the first color
+  const [productImages, setProductImages] = useState(singleProduct?.img[0].img);
+  // Initialize productImage with the first image of the selected color
   const [productImage, setProductImage] = useState(singleProduct?.img[0].img[0]);
   const [activeSize, setActiveSize] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [modalShow, setModalShow] = useState(false);
+  const [similarProducts, setSimilarProducts] = useState([]);
 
   const addCartHandler = (item) => {
     if (item.size && !selectedSize) {
@@ -49,9 +57,13 @@ const SingleProductPage = () => {
     dispatch(addToCart(cartData));
   }
 
-  const colorSelectHandler = (color, img) => {
-    setActiveColor(color);
-    setProductImage(img);
+  const colorSelectHandler = (color) => {
+    const selectedColor = singleProduct.img.find(item => item.color === color);
+    if (selectedColor) {
+      setActiveColor(color);
+      setProductImages(selectedColor.img);
+      setProductImage(selectedColor.img[0]);
+    }
   }
 
   const sizeSelection = (size) => {
@@ -103,11 +115,19 @@ const SingleProductPage = () => {
     const checkoutItems = {
       finalItems: singleProduct,
       finalAmmount: singleProduct.price * quantity,
-      deliveryCharge:  singleProduct.price * quantity < 500 ? 80 : 0,
+      deliveryCharge: singleProduct.price * quantity < 500 ? 80 : 0,
     }
     dispatch(addCheckout(checkoutItems));
     navigate("/checkout");
   }
+
+  //similar product handling
+  const similarProductHandler = () => {
+    const similarProduct = productData.filter(product => product.sub_category === singleProduct.sub_category && product.id !== singleProduct.id);
+    setSimilarProducts(similarProduct);
+    setModalShow(true);
+  }
+
   return (
     <div className='single-product-page'>
       <ToastContainer />
@@ -116,13 +136,14 @@ const SingleProductPage = () => {
           <div className="col-md-5 d-flex justify-content-start align-items-center flex-column">
             <div className="image-wrapper d-flex justify-content-between gap-3">
               {isFav ? (
-                <FaHeart className='heart-icon red' onClick={removeFavHandler} />
+                <FaHeart className='heart-icon red shadow' onClick={removeFavHandler} />
               ) : (
-                <FaRegHeart className='heart-icon' onClick={addFavHandler} />
+                <FaRegHeart className='heart-icon shadow' onClick={addFavHandler} />
               )}
+              <TbCardsFilled className='same-product-icon shadow' onClick={similarProductHandler} />
               <div className="product-image-selection-container">
                 {
-                  singleProduct.img[0].img.map((item, index) => {
+                  productImages.map((item, index) => {
                     return (
                       <img
                         onClick={() => handleProductImage(item)}
@@ -181,10 +202,10 @@ const SingleProductPage = () => {
                             return (
                               <img
                                 key={index}
-                                src={item.img}
+                                src={item.colorIcon}
                                 alt=""
                                 className={activeColor === item.color ? "active" : ""}
-                                onClick={() => colorSelectHandler(item.color, item.img)}
+                                onClick={() => colorSelectHandler(item.color)}
                               />
                             )
                           })
@@ -239,6 +260,11 @@ const SingleProductPage = () => {
           </div>
         </div>
       </div>
+      <SimilarProductModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        similarProducts={similarProducts}
+      />
     </div>
   )
 }

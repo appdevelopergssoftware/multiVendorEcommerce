@@ -35,6 +35,18 @@
     cursor: pointer;
     z-index: 2;
 }
+.single-product-page .image-wrapper .same-product-icon{
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    font-size: 35px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #6b6b6b;
+    cursor: pointer;
+    z-index: 2;
+}
 
 .single-product-page .image-wrapper .heart-icon.red {
     color: red;
