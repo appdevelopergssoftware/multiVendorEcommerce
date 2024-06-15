@@ -1,6 +1,17 @@
 footer{
     background-color: var(--black1);
-    padding: 50px 0;
+    height: 520px;
+    position: relative;
+}
+footer .container{
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50%;
+    transform: translateX(-50%);
+}
+footer .footer-container{
+    height: 100%;
+    padding: 20px 0;
 }
 footer ul{
     list-style: none;
@@ -14,6 +25,9 @@ footer a{
     color: #8f8f8f;
     font-size: 14px;
 }
+footer a:hover{
+    color: #FFFFFF;
+}
 footer p{
     font-size: 18px;
     font-weight: 700;
@@ -22,4 +36,46 @@ footer p{
 footer span{
     color: #8f8f8f;
     margin: 0 10px;
+}
+footer .content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    footer{
+        height: auto;
+        padding: 20px 0;
+    }
+    footer .container{
+        position: relative !important;
+        left: 0;
+        transform: translateX(0);
+    }
+    .custom-shape-divider-top-1718452074{
+        display: none;
+    }
+}
+
+/* shape devider css */
+.custom-shape-divider-top-1718452074 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1718452074 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1718452074 .shape-fill {
+    fill: #FFFFFF;
 }

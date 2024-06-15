@@ -20,8 +20,8 @@ const Favourite = () => {
             favProducts?.length > 0 ?
               favProducts?.map(item => {
                 return (
-                  <div className='col-lg-2 col-md-4 col-6'>
-                    <ProductCard item={item} key={item.id} />
+                  <div className='col-lg-2 col-md-4 col-6' key={item.id}>
+                    <ProductCard item={item} />
                   </div>
                 )
               }) :

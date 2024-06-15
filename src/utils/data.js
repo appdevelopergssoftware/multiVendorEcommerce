@@ -500,7 +500,7 @@ export const productData = [
     category: "Men's",
     sub_category: "Formal Wear",
     quantity: 1,
-    brand: "Park Avenue",
+    brand: "Arrow",
     originalPrice: 7999,
     offer: 50,
     size: ["S", "M", "L", "XL", "XXL"]

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './Registration.css';
+import { FaEnvelope, FaUser, FaKey } from "react-icons/fa";
 
 const Registration = () => {
   const [inputValue, setInputValue] = useState({ name: "", email: "", password: "", cnf_password: "" });
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputValue)
+    console.log(inputValue);
   }
   return (
     <div className="registration-page">
@@ -13,7 +14,7 @@ const Registration = () => {
         <h2>Registration</h2>
         <form onSubmit={handleSubmit}>
           <div className="input-field">
-            <i className="fa-solid fa-user"></i>
+            <FaUser />
             <input
               type="text"
               placeholder="Name"
@@ -22,7 +23,7 @@ const Registration = () => {
             />
           </div>
           <div className="input-field">
-            <i className="fa-solid fa-envelope"></i>
+            <FaEnvelope />
             <input
               type="email"
               placeholder="Email"
@@ -31,7 +32,7 @@ const Registration = () => {
             />
           </div>
           <div className="input-field">
-            <i className="fa-solid fa-key"></i>
+            <FaKey />
             <input
               type="password"
               placeholder="Password"
@@ -40,7 +41,7 @@ const Registration = () => {
             />
           </div>
           <div className="input-field">
-            <i className="fa-solid fa-key"></i>
+            <FaKey />
             <input
               type="password"
               placeholder="Confirm Password"
@@ -49,7 +50,7 @@ const Registration = () => {
             />
           </div>
           <div className="button-field">
-            <button className="btn registration-btn">Login</button>
+            <button className="btn registration-btn">Register</button>
           </div>
         </form>
       </div>

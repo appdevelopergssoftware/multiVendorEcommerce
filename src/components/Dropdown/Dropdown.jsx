@@ -20,8 +20,8 @@ const Dropdown = ({ dropdownData, type, brands }) => {
     setBrand(uniqueBrand);
     setHoveredCategory(category);
   };
-  const handleNavigate = (brand) => {
-    
+  const handleNavigate = (brand, category) => {
+    navigate(`/product/${category}/${brand}`);
   }
 
   return (
@@ -42,7 +42,7 @@ const Dropdown = ({ dropdownData, type, brands }) => {
                 onMouseEnter={() => handleMouseEnter(item)}
               >
                 {item}
-                <FaAngleLeft/>
+                <FaAngleLeft />
               </li>
             </ul>
             {hoveredCategory === item && (
@@ -50,7 +50,7 @@ const Dropdown = ({ dropdownData, type, brands }) => {
                 <h6>Brands</h6>
                 {/* Render all brands here */}
                 {brand.map((brand, i) => (
-                  <div key={i} onClick={() => handleNavigate(brand)} className="brand-item mb-2">{brand}</div>
+                  <div key={i} onClick={() => handleNavigate(brand, hoveredCategory)} className="brand-item mb-2">{brand}</div>
                 ))}
               </div>
             )}

@@ -99,6 +99,16 @@
 
 
 /*****For filteration****/
+.breadcrumb .breadcrumb-item{
+    font-size: 14px !important;
+}
+.breadcrumb .breadcrumb-item a{
+    color: rgba(33, 37, 41, 0.75) !important;
+    text-decoration: none !important;
+}
+.breadcrumb .breadcrumb-item a:hover{
+    color: red !important;
+}
 .filter-container {
     width: 100%;
     height: auto;
@@ -221,7 +231,11 @@
     border-radius: 5px;
     font-size: 14px;
 }
-
+@media (max-width: 767px) {
+    .sort-selection select{
+        width: 100% !important;
+    }
+}
 
 
 /*****Product card caroussel css*****/

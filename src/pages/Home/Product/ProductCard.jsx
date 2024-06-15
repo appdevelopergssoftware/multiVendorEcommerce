@@ -35,7 +35,7 @@ const ProductCard = ({ item }) => {
   }
 
   return (
-    <div className="product-card">
+    <div className="product-card upDownEffect">
       {isFav ? (
         <FaHeart className='heart-icon red-heart shadow' onClick={() => removeFavHandler(item.id)} />
       ) : (

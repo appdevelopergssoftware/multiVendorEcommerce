@@ -8,11 +8,10 @@ import { FaAngleRight } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 
 const ProductPage = () => {
-  const { category } = useParams();
-  //const filteredProduct = productData.filter(item => item.category === category);
+  const { category, brand } = useParams();  // Get both category and brand from URL parameters
 
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [selectedBrand, setSelectedBrand] = useState("");
+  const [selectedBrand, setSelectedBrand] = useState(brand || "");  // Initialize with URL brand
   const [selectedSubcat, setSelectedSubcat] = useState("");
   const [selectedPriceRange, setSelectedPriceRange] = useState([0, Infinity]);
   const [customMinPrice, setCustomMinPrice] = useState("");
@@ -24,19 +23,19 @@ const ProductPage = () => {
     color: "",
   });
 
-  // Filter products when category changes
+  // Filter products when category or brand changes
   useEffect(() => {
-    setSelectedBrand("");
     setSelectedSubcat("");
     setSelectedPriceRange([0, Infinity]);
     setCustomMinPrice("");
     setCustomMaxPrice("");
     setSortOption(""); // Reset sorting option
+
     const filteredData = productData.filter(
-      (item) => item.category === category
+      (item) => item.category === category && (selectedBrand ? item.brand === selectedBrand : true)
     );
     setFilteredProducts(filteredData);
-  }, [category]);
+  }, [category, selectedBrand]);
 
   // Filter products based on selected filters
   useEffect(() => {
@@ -106,8 +105,6 @@ const ProductPage = () => {
         return products.sort((a, b) => b.price - a.price);
       case "price-low-to-high":
         return products.sort((a, b) => a.price - b.price);
-      //   case "Discount":
-      //     return products.sort((a, b) => (b.discount || 0) - (a.discount || 0));
       default:
         return products;
     }
@@ -122,12 +119,13 @@ const ProductPage = () => {
     setCustomMaxPrice("");
     setSortOption("");
   };
+
   return (
     <div className='product-page'>
       <h2 className='text-center my-5'>{category} Section</h2>
       <div className="container">
         <div className="row g-4">
-          <div className="col-md-3">
+          <div className="col-md-3 mb-4 mb-md-0">
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">
@@ -246,7 +244,7 @@ const ProductPage = () => {
                               .includes(searchVal.brand.toLowerCase())
                           )
                           .map((item, index) => (
-                            <li                             
+                            <li
                               key={index}
                               style={{
                                 cursor: "pointer",
@@ -331,49 +329,6 @@ const ProductPage = () => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="accordion-item">
-                  <h2 className="accordion-header">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour"
-                      aria-expanded="false"
-                      aria-controls="collapseFour"
-                    >
-                      Color
-                    </button>
-                  </h2>
-                  <div
-                    id="collapseFour"
-                    className="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div className="accordion-body">
-                      <div className="input-field">
-                        <input
-                          type="text"
-                          placeholder="Search sub-category"
-                          value={searchVal.color}
-                          onChange={(e) =>
-                            setSearchVal({
-                              ...searchVal,
-                              color: e.target.value,
-                            })
-                          }
-                        />
-                        <IoIosSearch />
-                      </div>
-                      <ul className="m-0 ps-3">
-                        <li>Blue</li>
-                        <li>Black</li>
-                        <li>Yellow</li>
-                        <li>White</li>
-                        <li>Green</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -403,4 +358,4 @@ const ProductPage = () => {
   )
 }
 
-export default ProductPage
+export default ProductPage;

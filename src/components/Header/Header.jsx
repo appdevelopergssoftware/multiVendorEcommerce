@@ -5,12 +5,14 @@ import { FaRegHeart } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import Counter from '../Counter/Counter';
 import { LiaAngleDownSolid } from "react-icons/lia";
+import { TiThMenu } from "react-icons/ti";
 import Dropdown from '../Dropdown/Dropdown';
 import { productData } from '../../utils/data';
 import SignupDropdown from '../SignupDropdown/SignupDropdown';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import Login from '../../pages/Login/Login';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -65,9 +67,12 @@ const Header = () => {
 
     return (
         <header>
-            <div className="container h-100 d-flex align-items-center justify-content-between">
+            <div className="container-lg h-100 d-flex align-items-center justify-content-between">
+                <div className="mobile-menu">
+                    <TiThMenu />
+                </div>
                 <div className="logo-section">
-                    <span>E Commerce</span>
+                    <span>ECOM</span>
                 </div>
                 <div className="search-bar">
                     <IoIosSearch />
@@ -83,10 +88,14 @@ const Header = () => {
                     <ul className='m-0 p-0'>
                         <li className='category'>Categories <LiaAngleDownSolid /> <Dropdown dropdownData={uniqueCategories} type="category" /></li>
                         <li className='brand'>Brands <LiaAngleDownSolid /> <Dropdown dropdownData={uniqueCategories} type="brand" /></li>
-                        <li className='sign-up'>Sign in / Sign up <SignupDropdown setShowLogin={setShowLogin} /></li>
-                        <li onClick={() => navigate("/wishlist")}><FaRegHeart className='fav-icon' /><Counter counter={favProducts?.length} /></li>
-                        <li onClick={() => navigate("/cart")}><FiShoppingCart className='cart-icon' /><Counter counter={cartItems?.length} /></li>
+                        <li className='sign-up'>Login<SignupDropdown setShowLogin={setShowLogin} /></li>
+                        {/* <li onClick={() => navigate("/wishlist")}><FaRegHeart className='fav-icon' /><Counter counter={favProducts?.length} /></li>
+                        <li onClick={() => navigate("/cart")}><FiShoppingCart className='cart-icon' /><Counter counter={cartItems?.length} /></li> */}
                     </ul>
+                    <div className="cart-wish">
+                        <Link onClick={() => navigate("/wishlist")}><FaRegHeart className='fav-icon' /><Counter counter={favProducts?.length} /></Link>
+                        <Link onClick={() => navigate("/cart")}><FiShoppingCart className='cart-icon' /><Counter counter={cartItems?.length} /></Link>
+                    </div>
                 </div>
             </div>
             {
@@ -95,7 +104,7 @@ const Header = () => {
                     {
                         searchedProduct.map(item => (
                             <div className="each-product mb-2" onClick={() => navigationHandler(item.id)} key={item.id}>
-                                <img src={item.img[0].img} alt="" width={"45px"} />
+                                <img src={item.img[0].img[0]} alt="" width={"45px"} />
                                 <h6 className='p-0 m-0'>{item.name}</h6>
                             </div>
                         ))

@@ -60,7 +60,7 @@ const Login = ({setShowLogin}) => {
             />
           </div>
           <p>
-            If you not registered please <Link to="">Register here</Link>
+            If you not registered please <Link to="/registration">Register here</Link>
           </p>
           <div className="button-field">
             <button className="btn login-btn">Login</button>

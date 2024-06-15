@@ -3,8 +3,15 @@ header {
     height: 80px;
     background-color: var(--black1);
 }
-
-header .container .logo-section span {
+header .mobile-menu{
+    display: none;
+}
+header .mobile-menu svg{
+    color: var(--light-text-color);
+    font-size: 25px;
+    cursor: pointer;
+}
+header .logo-section span {
     font-size: 22px;
     cursor: pointer;
     color: var(--light-text-color);
@@ -42,6 +49,10 @@ header .search-bar svg {
 
 header .right-header {
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 header .right-header ul {
@@ -64,12 +75,31 @@ header .right-header ul li {
 
 header .right-header ul li svg {
     transition: all .4s;
+    margin-left: 3px;
 }
-
-header .right-header ul li .fav-icon,
+header .right-header .cart-wish{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+header .right-header .cart-wish .fav-icon,
 .cart-icon {
     font-size: 22px;
     margin-left: 10px;
+    transition: .2s all ease-in-out;
+    color: #fff;
+}
+header .right-header .cart-wish a{
+    color: #fff;
+    position: relative;
+}
+
+header .right-header ul li .fav-icon:hover {
+    scale: 1.2;
+}
+
+header .right-header ul li .cart-icon:hover {
+    scale: 1.2;
 }
 
 header .right-header ul li.brand .drop-down-container {
@@ -78,15 +108,17 @@ header .right-header ul li.brand .drop-down-container {
 }
 
 header .right-header ul li .drop-down-container {
-    display: none;
+    transform: scaleY(0);
+    transition: all .3s;
+    transform-origin: top;
 }
 
 header .right-header ul li.category:hover .drop-down-container {
-    display: block;
+    transform: scaleY(100%);
 }
 
 header .right-header ul li.brand:hover .drop-down-container {
-    display: block;
+    transform: scaleY(100%);
 }
 
 header .right-header ul li.category:hover svg {
@@ -98,11 +130,13 @@ header .right-header ul li.brand:hover svg {
 }
 
 header .right-header ul li.sign-up .signup-dropdown {
-    display: none;
+    transform: scaleY(0);
+    transition: all .3s;
+    transform-origin: top;
 }
 
 header .right-header ul li.sign-up:hover .signup-dropdown {
-    display: block;
+    transform: scaleY(100%);
 }
 
 .drop-down-container .brand-wrapper {
@@ -149,6 +183,23 @@ header .right-header ul li.sign-up:hover .signup-dropdown {
 
 .drop-down-container .brand-wrapper .brand-container .brand-item {
     font-weight: 300;
+}
+
+@media (max-width: 991px) {
+    .search-bar{
+        width: 40% !important;
+    }
+}
+@media (max-width: 991px) {
+    header .right-header ul{
+        display: none;
+    }
+    header{
+        padding: 0 30px;
+    }
+    header .mobile-menu{
+        display: block;
+    }
 }
 
 /*****Search result*****/
