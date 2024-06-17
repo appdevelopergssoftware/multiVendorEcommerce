@@ -125,7 +125,7 @@ const ProductPage = () => {
       <h2 className='text-center my-5'>{category} Section</h2>
       <div className="container">
         <div className="row g-4">
-          <div className="col-md-3 mb-4 mb-md-0">
+          <div className="col-md-3 mb-4 mb-md-0 pt-md-4">
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item">
@@ -333,8 +333,8 @@ const ProductPage = () => {
             </div>
           </div>
           <div className="col-md-9">
-            <div className="row g-4">
-              <div className="sort-selection">
+            <div className="row">
+              <div className="sort-selection mb-4">
                 <select onChange={handleSortChange} value={sortOption}>
                   <option value="">Sort By</option>
                   <option value="price-high-to-low">Price High to Low</option>
@@ -344,7 +344,7 @@ const ProductPage = () => {
               {
                 filteredProducts.map(item => {
                   return (
-                    <div className='col-lg-3 col-md-6 col-6' key={item.id}>
+                    <div className='col-lg-3 col-md-6 col-6 mb-4' key={item.id}>
                       <ProductCard item={item} />
                     </div>
                   )

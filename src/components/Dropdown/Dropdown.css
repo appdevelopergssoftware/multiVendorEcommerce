@@ -18,6 +18,9 @@
     width: 100%;
     border-bottom: 1px solid #bebebe;
     padding: 5px 0;  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .drop-down-container ul li:hover{
     color: var(--dark-text-color);
@@ -26,4 +29,49 @@
 .drop-down-container .brand-container .brand-item:hover{
     color: var(--theme-color);
     font-weight: 600;
+}
+.drop-down-container .brand-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drop-down-container .brand-wrapper ul {
+    width: 40%;
+    padding: 0 !important;
+    margin: 0 !important;
+    padding-left: 10px !important;
+}
+
+.drop-down-container .brand-wrapper ul li {
+    width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drop-down-container ul li svg {
+    display: none;
+    transform: rotate(180deg) !important;
+}
+
+.drop-down-container ul li:hover svg {
+    display: block;
+}
+
+.drop-down-container .brand-wrapper .brand-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+.drop-down-container .brand-wrapper .brand-container .brand-item {
+    font-weight: 300;
 }

@@ -1,0 +1,9 @@
+.star-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.star-wrapper svg{
+    font-size: 20px;
+    color: orange;
+}

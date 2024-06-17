@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { productData } from '../../utils/data';
 import { FaAngleLeft } from "react-icons/fa6";
 
-const Dropdown = ({ dropdownData, type, brands }) => {
+const Dropdown = ({ dropdownData, type }) => {
   const navigate = useNavigate();
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [brand, setBrand] = useState([]);
@@ -33,6 +33,7 @@ const Dropdown = ({ dropdownData, type, brands }) => {
               onClick={() => navigate(`/product/${item}`)}
             >
               {item}
+              <FaAngleLeft />
             </li>
           </ul>
         ) : (

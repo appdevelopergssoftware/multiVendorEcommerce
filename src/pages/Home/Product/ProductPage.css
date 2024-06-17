@@ -236,7 +236,20 @@
         width: 100% !important;
     }
 }
-
+@media (max-width: 400px) {
+    .product-card .image-wrapper img{
+        height: 180px;
+    }
+    .product-card .product-info .price-section span:nth-child(1) {
+        font-size: 12px;
+    }
+    .product-card .product-info .price-section span:nth-child(2) {
+        font-size: 12px;
+    }
+    .product-card .product-info {
+        padding: 0;
+    }
+}
 
 /*****Product card caroussel css*****/
 .carousel {

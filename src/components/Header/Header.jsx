@@ -5,7 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import Counter from '../Counter/Counter';
 import { LiaAngleDownSolid } from "react-icons/lia";
-import { TiThMenu } from "react-icons/ti";
+import { FaAngleRight } from "react-icons/fa6";
 import Dropdown from '../Dropdown/Dropdown';
 import { productData } from '../../utils/data';
 import SignupDropdown from '../SignupDropdown/SignupDropdown';
@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import Login from '../../pages/Login/Login';
 import { Link } from 'react-router-dom';
+import userImg from '../../assets/profile.png';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Header = () => {
     const { favProducts } = useSelector(state => state.favProduct);
     const { cartItems } = useSelector(state => state.cartItem);
     const [showLogin, setShowLogin] = useState(false);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     const dynamicPlaceholders = ["products", "category", "brand"];
     const [placeholderIndex, setPlaceholderIndex] = useState(0);
@@ -65,14 +67,27 @@ const Header = () => {
         )
     );
 
+    const mobilemenuHandler = () => {
+        if(!showMobileMenu){
+            setShowMobileMenu(true);
+        } else{
+            setShowMobileMenu(false);
+        }
+    }
+
+    const mobileCatNavigate = (item) => {
+        navigate(`/product/${item}`);
+        setShowMobileMenu(false);
+    }
+
     return (
         <header>
             <div className="container-lg h-100 d-flex align-items-center justify-content-between">
-                <div className="mobile-menu">
-                    <TiThMenu />
-                </div>
+                <button className={`mobile-menu ${showMobileMenu ? "active" : ""}`}onClick={mobilemenuHandler}>
+                    <div className="bar"></div>
+                </button>
                 <div className="logo-section">
-                    <span>ECOM</span>
+                    <Link to="/"><span>ECOM</span></Link>
                 </div>
                 <div className="search-bar">
                     <IoIosSearch />
@@ -85,17 +100,34 @@ const Header = () => {
                     />
                 </div>
                 <div className="right-header">
-                    <ul className='m-0 p-0'>
-                        <li className='category'>Categories <LiaAngleDownSolid /> <Dropdown dropdownData={uniqueCategories} type="category" /></li>
-                        <li className='brand'>Brands <LiaAngleDownSolid /> <Dropdown dropdownData={uniqueCategories} type="brand" /></li>
+                    <ul className='m-0 p-0 desktop-nav-menu'>
+                        <li className='category'>
+                            Categories <LiaAngleDownSolid />
+                            <Dropdown dropdownData={uniqueCategories} type="category" />
+                        </li>
+                        <li className='brand'>
+                            Brands <LiaAngleDownSolid />
+                            <Dropdown dropdownData={uniqueCategories} type="brand" />
+                        </li>
                         <li className='sign-up'>Login<SignupDropdown setShowLogin={setShowLogin} /></li>
-                        {/* <li onClick={() => navigate("/wishlist")}><FaRegHeart className='fav-icon' /><Counter counter={favProducts?.length} /></li>
-                        <li onClick={() => navigate("/cart")}><FiShoppingCart className='cart-icon' /><Counter counter={cartItems?.length} /></li> */}
                     </ul>
                     <div className="cart-wish">
-                        <Link onClick={() => navigate("/wishlist")}><FaRegHeart className='fav-icon' /><Counter counter={favProducts?.length} /></Link>
-                        <Link onClick={() => navigate("/cart")}><FiShoppingCart className='cart-icon' /><Counter counter={cartItems?.length} /></Link>
+                        <Link to="/wishlist"><FaRegHeart className='fav-icon' /><Counter counter={favProducts?.length} /></Link>
+                        <Link to="/cart"><FiShoppingCart className='cart-icon' /><Counter counter={cartItems?.length} /></Link>
                     </div>
+                    <ul className={`mobile-nav-menu ${showMobileMenu ? "active" : ""}`}>
+                        <div className="login-container">
+                            <img src={userImg} alt="" />
+                            <p className='p-0 m-0'>Login</p>
+                        </div>
+                        {
+                            uniqueCategories.map((item, index) => {
+                                return(
+                                    <li onClick={() => mobileCatNavigate(item)} key={index}>{item} <FaAngleRight /></li>
+                                )
+                            })
+                        }
+                    </ul>
                 </div>
             </div>
             {

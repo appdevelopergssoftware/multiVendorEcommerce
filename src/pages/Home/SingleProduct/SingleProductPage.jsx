@@ -14,6 +14,8 @@ import { addFavProducts, removeFavProducts } from '../../../store/favPrductSlice
 import ReactImageMagnify from 'react-image-magnify';
 import { addCheckout } from '../../../store/checkoutSlice';
 import SimilarProductModal from '../Product/SimilarProductModal';
+import ReviewSection from './ReviewSection';
+import ProductCard from '../Product/ProductCard';
 
 const SingleProductPage = () => {
   const { id } = useParams();
@@ -128,12 +130,16 @@ const SingleProductPage = () => {
     setModalShow(true);
   }
 
+  //filter by brand
+  const similarBrandProduct = productData.filter(item => item.brand === singleProduct.brand && item.category === singleProduct.category && item.id != singleProduct.id);
+
+  const similarProductsData = productData.filter(product => product.sub_category === singleProduct.sub_category && product.id !== singleProduct.id);
   return (
     <div className='single-product-page'>
       <ToastContainer />
       <div className="container">
-        <div className="row py-5">
-          <div className="col-md-5 d-flex justify-content-start align-items-center flex-column">
+        <div className="row py-md-5">
+          <div className="col-md-5 mb-4 d-flex justify-content-start align-items-center flex-column">
             <div className="image-wrapper d-flex justify-content-between gap-3">
               {isFav ? (
                 <FaHeart className='heart-icon red shadow' onClick={removeFavHandler} />
@@ -257,6 +263,35 @@ const SingleProductPage = () => {
                 <p className='p-0 m-0'>{singleProduct.description}</p>
               </div>
             </div>
+          </div>
+        </div>
+        <hr />
+        <ReviewSection />
+        <h4 className='mb-3'>More from {singleProduct.brand}</h4>
+        <div className="product-caroussel mb-5">
+          <div className="row g-4">
+
+            {
+              similarBrandProduct.map(item => {
+                return (
+                  <div className="col-lg-2 col-md-3" key={item.id}>
+                    <ProductCard item={item}/>
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
+        <h4 className='mb-3'>Similar Products</h4>
+        <div className="product-caroussel">
+          <div className="row g-4">
+            {similarProductsData.map(item => {
+              return(
+                <div className="col-lg-2 col-md-3" key={item.id}>
+                  <ProductCard item={item}/>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>

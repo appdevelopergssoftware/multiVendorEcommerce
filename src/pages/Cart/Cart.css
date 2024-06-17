@@ -126,6 +126,7 @@
 .each-cart-item .product-info{
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 .each-cart-item .product-info .left{
     display: flex;
@@ -157,6 +158,7 @@
     display: flex;
     align-items: center;
     gap: 30px;
+    font-size: 14px;
 }
 .each-cart-item .product-info .left .footer-section span:nth-child(1){
     color: #707070;
@@ -190,7 +192,7 @@
 }
 
 .each-cart-item .product-info .right span{
-    font-size: 14px;
+    font-size: 12px;
 }
 .each-cart-item .product-info .right img{
     width: 22px;
